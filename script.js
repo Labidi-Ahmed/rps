@@ -51,22 +51,23 @@ function getWinner(playerChoice,computerChoice){
 
 }
 
-
+const result=document.querySelector("#result");
 let playerScore=0;
 let computerScore=0;
 let round=1;
-
+let playerName="ahmed";
 function playRound(playerChoice,computerChoice){
     let winner=getWinner(playerChoice,computerChoice);
     let msg="";
     
     switch(winner){
         case 'player win':
-            msg = ` player choice: ${playerChoice}  computer choice: ${computerChoice}\n
-            winner: player in round ${round++} with score ${++playerScore}`;
+            msg = `player choice: ${playerChoice}      |       computer choice: ${computerChoice}\n
+            |winner: player in round: ${round++} with score: ${++playerScore}`;
             break;
         case 'computer win':
-            msg = `winner: computer in round ${round++} with score ${++computerScore}`;
+            msg = `player choice: ${playerChoice}         |         computer choice: ${computerChoice}\n
+            |winner: computer in round: ${round++} with score: ${++computerScore}`;
 
             break;
         case 'draw':
@@ -77,7 +78,7 @@ function playRound(playerChoice,computerChoice){
             break;
         
     }
-    console.log(msg);
+    result.textContent=msg;
     
 
 
@@ -87,7 +88,29 @@ const playerButtons=document.querySelectorAll('.choiceBtn');
 playerButtons.forEach((button)=>{
     button.addEventListener('click',()=>{
         let playerChoice=button.getAttribute('id');
+        if (round<=5){
         playRound(playerChoice,getComputerChoice());
+        }
+        else{
+            switch(true){
+                case playerScore>computerScore:
+                    result.textContent=`the final winner is ${playerName} with score: ${playerScore} `;
+                    break;
+                case playerScore<computerScore:
+                    result.textContent=`the final winner is computer with score: ${computerScore} `;
+                    break;
+                default:
+                    result.textContent="Draw";
+                    break;
+
+                    
+            }
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
+            
+        }
+        
         
 
 

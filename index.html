@@ -4,22 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer> </script>
+    
 </head>
 <body>
 <header>
-
+    <div class="logos">
+        <img src="./images/rock.svg" alt="" id="img1"></img>
+        <img src="./images/paper.svg" alt="" id="img2"></img>
+        <img src="./images/scissor.svg" alt="" id="img3"></img>
+    </div>
+    <div class="title"> Rock Paper Scissors </div>
+    <div class="start"> <button>get started</button> </div>
 </header>
 
 <section>
-<div id="playerChoice">
-    <button class="choiceBtn" id="rock">rock</button>
-    <button class="choiceBtn" id="paper">paper</button>
-    <button class="choiceBtn" id="scissors">scissors</button>
-</div>
+    <div id="result">Winner ?</div>
+        <div id="playerChoice">
+            <button class="choiceBtn" id="rock">rock</button>
+            <button class="choiceBtn" id="paper">paper</button>
+            <button class="choiceBtn" id="scissors">scissors</button>
+
+        </div>
+        <div  class="popup"  >
+    
+            <div class="header">enter your name</div>
+            <div class="section"><button class="validate"> lets play!</button></div>
+        </div>
+        <div id="overlay" ></div>
+        
 </section>
 
 <footer>
+    
+
+   
+
+        Copyright © 2023 Labidi Ahmed
+        
+        
+ 
 
 </footer>
 </body>

@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+img{
+    height: 13vh;
+    width: 13vh;
+}
+
+header{
+    background-color: #3c95c6;
+    height: 40%;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    
+    
+    
+}
+.logos{
+    display: flex;
+    gap: 50px;
+    
+    
+}
+.title{
+
+color: #fff;
+font-family: "Open Sans",Helvetica,sans-serif;
+font-size: 4.5rem;
+font-weight: bolder ;
+text-shadow: #1e1e1e 0px 10px 5px;
+}
+.start{
+    justify-self: flex-end;
+   
+    margin-top: auto;
+}
+.start button {
+    height: 5rem;
+    background: rgba(255,255,255,.25);
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid #fff;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.15);
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    cursor: pointer;
+    font-size: larger;
+    transition:0.1s ease-in;
+    
+  }
+  .start button:hover{
+    scale: 1.2;
+  }
+
+  section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+  }
+  #result{
+    width: 40%;
+    color: #1e1e1e;
+    border-radius: 8px;
+    height:  100px;
+    text-align: center;
+    font-family: "Open Sans",Helvetica,sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+  }
+  .choiceBtn{
+    height: 5rem;
+    background: rgba(255,255,255,.25);
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid #fff;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.15);
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    cursor: pointer;
+    font-size: larger;
+    transition:0.1s ease-in;
+    color: #1e1e1e;
+  }
+  footer{
+    justify-self: end;
+    padding: 10px;
+    text-align: center;
+    text-shadow: #616 0px 2px 10px ;
+   
+  }
