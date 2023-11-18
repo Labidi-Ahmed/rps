@@ -58,7 +58,7 @@ const game=document.querySelector(".game");
 
 
 
-
+window.scrollTo({ top: 0, behavior: 'smooth' })
 
 startBtn.addEventListener('click', () => {
     
@@ -89,32 +89,36 @@ let playerScore=0;
 let computerScore=0;
 let round=1;
 
-function playRound(playerChoice,computerChoice){
-    let winner=getWinner(playerChoice,computerChoice);
-    let msg="";
-    
-    switch(winner){
+function setStyling(color) {
+    result.style.color = color;
+}
+
+function playRound(playerChoice, computerChoice) {
+    let winner = getWinner(playerChoice, computerChoice);
+    let msg = "";
+
+    switch (winner) {
         case 'player win':
-            msg = `player choice: ${playerChoice}      |       computer choice: ${computerChoice}\n
-            |winner: player in round: ${round++} with score: ${++playerScore}`;
+            msg = `You win this round! (${playerChoice} beats ${computerChoice})`;
+            setStyling('green');
+            playerScore++;
+            round++
             break;
         case 'computer win':
-            msg = `player choice: ${playerChoice}         |         computer choice: ${computerChoice}\n
-            |winner: computer in round: ${round++} with score: ${++computerScore}`;
-
+            msg = `Computer wins this round! (${computerChoice} beats ${playerChoice})`;
+            setStyling('red');
+            computerScore++;
+            round++
             break;
         case 'draw':
-            msg='draw';
+            msg = `It's a draw! Both chose ${playerChoice}`;
+            setStyling('gray');
             round++;
             break;
         default:
             break;
-        
     }
-    result.textContent=msg;
-    
-
-
+    result.textContent = msg;
 }
 
 const playerButtons=document.querySelectorAll('.choiceBtn');
@@ -127,17 +131,21 @@ playerButtons.forEach((button)=>{
         else{
             switch(true){
                 case playerScore>computerScore:
+                    setStyling('green');
                     result.textContent=`the final winner is ${playerName} with score: ${playerScore} `;
                     break;
                 case playerScore<computerScore:
+                    setStyling('red');
                     result.textContent=`the final winner is computer with score: ${computerScore} `;
                     break;
                 default:
+                    setStyling('gray');
                     result.textContent="results of final round Draw";
                     break;
 
                     
             }
+            
             setTimeout(function() {
                 location.reload();
             }, 2000);
@@ -157,13 +165,3 @@ playerButtons.forEach((button)=>{
 
 
 
-/*for (let i = 0; i <= 5; i++) {
-  
-console.log("****************round********************* %d",i);
-
-playerChoice="rock";
-computerChoice=getComputerChoice();
-console.log("player choice :"+String(playerChoice));
-console.log("computer choice :"+String(computerChoice));
-console.log(getWinner(playerChoice,computerChoice));
-}*/
