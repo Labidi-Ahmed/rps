@@ -60,12 +60,13 @@ const game=document.querySelector(".game");
 
 
 
-startBtn.addEventListener('click',()=>{
+startBtn.addEventListener('click', () => {
+    
  
+
+    // Toggle the popup
     popup.classList.toggle('inactive');
-
-
-})
+});
 
 validateBtn.addEventListener('click',()=>{
 if(NameInput.value!=""){
@@ -73,7 +74,8 @@ if(NameInput.value!=""){
     game.classList.toggle('inactive');
     startBtn.disabled=true;
     playerName=NameInput.value;
-
+    // Scroll to the section
+    document.querySelector('.game').scrollIntoView({ behavior: 'smooth' });
 }
 
 })
@@ -149,6 +151,7 @@ playerButtons.forEach((button)=>{
     })
     
 })
+
 
 
 
